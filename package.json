@@ -1,0 +1,21 @@
+{
+  "name": "library-api-node-with-mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinaraujo/library-api-node-with-mongodb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinaraujo/library-api-node-with-mongodb/issues"
+  },
+  "homepage": "https://github.com/kevinaraujo/library-api-node-with-mongodb#readme"
+}
