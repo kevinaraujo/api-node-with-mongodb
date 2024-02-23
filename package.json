@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server server.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/kevinaraujo/library-api-node-with-mongodb/issues"
   },
-  "homepage": "https://github.com/kevinaraujo/library-api-node-with-mongodb#readme"
+  "homepage": "https://github.com/kevinaraujo/library-api-node-with-mongodb#readme",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
