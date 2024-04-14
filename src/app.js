@@ -1,4 +1,5 @@
 import express from 'express';
+import connectToDb from './config/db.js';
 
 const books = [
     {
@@ -14,6 +15,16 @@ const books = [
 const findBooks = (id) => {
     return books.findIndex(book => book.id === Number(id));
 }
+
+const connection = await connectToDb();
+
+connection.on("error", (err) => {
+    console.log("Mongo connection error => ", err);
+});
+
+connection.once("open", () => {
+    console.log("Mongo connection done!")
+});
 
 const app = express();
 app.use(express.json());
@@ -64,4 +75,3 @@ app.delete('/books/:id', (req, res) => {
 
 
 export default app;
-
