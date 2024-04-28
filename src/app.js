@@ -1,20 +1,6 @@
 import express from 'express';
 import connectToDb from './config/db.js';
-
-const books = [
-    {
-        id: 1,
-        title: 'Book 1'
-    },
-    {
-        id: 2,
-        title: 'Book 21'
-    }
-];
-
-const findBooks = (id) => {
-    return books.findIndex(book => book.id === Number(id));
-}
+import book from './models/book.js';
 
 const connection = await connectToDb();
 
@@ -35,8 +21,10 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/books', (req, res) => {
-    res.status(200).json(books);
+app.get('/books', async (req, res) => {
+    const data = await book.find({});
+
+    res.status(200).json(data);
 });
 
 app.post('/books', (req, res) => {
