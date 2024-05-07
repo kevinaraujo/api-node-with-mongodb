@@ -1,6 +1,6 @@
 import express from 'express';
 import connectToDb from './config/db.js';
-import book from './models/book.js';
+import routes from "./routes/index.js"
 
 const connection = await connectToDb();
 
@@ -13,27 +13,7 @@ connection.once("open", () => {
 });
 
 const app = express();
-app.use(express.json());
-
-app.get('/', (req, res) => {
-    res.status(200).send({
-        success: 'ok'
-    });
-});
-
-app.get('/books', async (req, res) => {
-    const data = await book.find({});
-
-    res.status(200).json(data);
-});
-
-app.post('/books', (req, res) => {
-    books.push(req.body);
-
-    res.status(201).json({
-        "message": "success"
-    })
-});
+routes(app)
 
 app.get('/books/:id', (req, res) => {
     console.log('id =>',req.params.id);
