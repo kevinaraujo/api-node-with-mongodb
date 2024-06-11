@@ -64,6 +64,20 @@ class BookController {
             res.status(500).json({ error: `${err.message} - failed to delete book` })
         }
     }
+
+    static async listBooksByEditor(req, res) {
+        try {
+            const { editor } = req.query;
+
+            const books = await book.find({ editor });
+
+            res.status(200).json({ books })
+        } catch (err) {
+            res.status(500).json({
+                error: `${err.message} - failed to search book`
+            })
+        }
+    }
 }
 
 export default BookController

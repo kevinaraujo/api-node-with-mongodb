@@ -7,120 +7,212 @@
 	},
 	"item": [
 		{
-			"name": "List books",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/books",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"books"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List book by id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/books/661c5ecb4c21b911ed4322ff",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"books",
-						"661c5ecb4c21b911ed4322ff"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Register book",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"title\": \"Rainha das lágrima 2\",\n    \"editor\": \"Kevin\",\n    \"price\": 99,\n    \"pages\": 199.9\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Books",
+			"item": [
+				{
+					"name": "List books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/books",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"books"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete book",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/books/663fd41cba461b622594d210",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"books",
-						"663fd41cba461b622594d210"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update book",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"title\": \"Rainha das lágrima 40\",\n    \"editor\": \"Kevin\",\n    \"price\": 104,\n    \"pages\": 209.9\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "List book by editor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/books/search?editor=Clássico",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"search"
+							],
+							"query": [
+								{
+									"key": "editor",
+									"value": "Clássico"
+								}
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/books/663fd52c976a530587c255d7",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"books",
-						"663fd52c976a530587c255d7"
-					]
+				{
+					"name": "List book by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/books/661c5ecb4c21b911ed4322ff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"661c5ecb4c21b911ed4322ff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Rainha das lágrima 4\",\n    \"editor\": \"Kevin\",\n    \"price\": 99,\n    \"pages\": 199.9\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register book with author",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Rainha das lágrima 4\",\n    \"editor\": \"Kevin\",\n    \"price\": 99,\n    \"pages\": 199.9,\n    \"author\": \"66511f017b9440e675110442\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/books/663fd41cba461b622594d210",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"663fd41cba461b622594d210"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Rainha das lágrima 40\",\n    \"editor\": \"Kevin\",\n    \"price\": 104,\n    \"pages\": 209.9\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/books/663fd52c976a530587c255d7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"663fd52c976a530587c255d7"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "Register author",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Kevin Araujo\",\n    \"nationality\": \"Brazil\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"authors"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
