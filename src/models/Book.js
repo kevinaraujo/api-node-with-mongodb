@@ -7,7 +7,7 @@ const bookSchema = new mongoose.Schema({
     editor: { type: String},
     price: {type: Number },
     pages: { type: Number},
-    author: authorSchema
+    author: { type: mongoose.Schema.Types.ObjectId, ref: 'authors', required: true }
 }, { versionKey: false });
 
 const Book = mongoose.model('books', bookSchema);

@@ -4,7 +4,7 @@ import book from '../models/Book.js';
 class BookController {
     static async listBooks (req, res) {
         try {
-            const data = await book.find({})
+            const data = await book.find({}).populate("author").exec();
             res.status(200).json(data)
         } catch (err) {
             res.status(500).json({ error: `${err.message} - failed to list book` })
@@ -24,15 +24,8 @@ class BookController {
 
     static async registerBook (req, res) {
         try {
-            const newBook = req.body
-            const authorData = await author.findById(newBook.author)
 
-            const bookComplete = {
-                ...newBook,
-                author: authorData
-            }
-
-            await book.create(bookComplete)
+            const newBook = await book.create(req.body)
 
             res.status(201).json({
                 "message": "success",
